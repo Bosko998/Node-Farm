@@ -57,7 +57,7 @@ const server = http.createServer((req, res) => {
       .map((el) => replaceTemplate(tempCard, el))
       .join('');
     const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml);
-    res.end('output');
+    res.end(output);
   } else if (pathName === '/product') {
     const id = myURL.searchParams.get('id'); // retreive product number
     const product = dataObj[id];
